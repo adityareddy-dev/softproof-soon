@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Softproof</title>
+<meta name="description" content="Softproof is coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one left-aligned column on a proof sheet, colour bars along the foot like a press proof. */
+:root {
+  --bg: #eef0f2;
+  --fg: #14171c;
+  --muted: #5b6370;
+  --line: #c9ced6;
+  --c: #00a3d9;
+  --m: #e4007c;
+  --y: #ffd400;
+  --k: #14171c;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101216; --fg: #eceef1; --muted: #98a0ac; --line: #2c313a; --k: #eceef1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101216; --fg: #eceef1; --muted: #98a0ac; --line: #2c313a; --k: #eceef1;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--display);
+  display: flex;
+  flex-direction: column;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px;
+}
+.top {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-family: var(--mono); font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  max-width: 64rem; width: 100%; margin: 0 auto;
+}
+.reg { width: 28px; height: 28px; flex: none; stroke: var(--fg); fill: none; stroke-width: 1.5; }
+main {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+  max-width: 64rem; width: 100%; margin: 0 auto; padding-block: 48px; min-width: 0;
+}
+h1 {
+  margin: 0; font-weight: 700; font-size: clamp(3rem, 12vw, 8rem); line-height: 0.95; letter-spacing: -0.035em; text-wrap: balance;
+}
+p { margin: 24px 0 0; max-width: 34ch; font-size: 1.125rem; line-height: 1.5; color: var(--muted); }
+.bars { display: flex; max-width: 64rem; width: 100%; margin: 0 auto; border: 1px solid var(--line); }
+.bars span { flex: 1; height: 14px; }
+.bars span:nth-child(1) { background: var(--c); }
+.bars span:nth-child(2) { background: var(--m); }
+.bars span:nth-child(3) { background: var(--y); }
+.bars span:nth-child(4) { background: var(--k); }
+</style>
+</head>
+<body>
+<div class="top">
+  <span>softproof.ai</span>
+  <svg class="reg" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="7"/><path d="M14 1v26M1 14h26"/></svg>
+</div>
+<main>
+  <h1>Coming soon.</h1>
+  <p>Something new is being built here. Check back later.</p>
+</main>
+<div class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+</body>
+</html>
